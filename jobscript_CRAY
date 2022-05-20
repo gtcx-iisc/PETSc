@@ -1,0 +1,11 @@
+#!/bin/sh
+#PBS -N GTC-X
+#PBS -l select=1:ncpus=24
+#PBS -l walltime=00:02:00
+#PBS -l place=scatter
+#PBS -l accelerator_type="None"
+#PBS -S /bin/sh@sdb -V
+. /opt/modules/default/init/sh
+cd $PBS_O_WORKDIR
+# export OMP_NUM_THREADS=24
+aprun -n 4 -N 4 -d 1 -j 2 ./test_petsc

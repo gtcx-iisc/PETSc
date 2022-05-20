@@ -1,0 +1,7 @@
+export LD_LIBRARY_PATH=/home/jkumar/Softwares/petsc-3.8.4/arch-linux2-c-debug/lib
+
+
+mpif90 test_petsc.F90 -I/home/jkumar/Softwares/petsc-3.8.4/include/ -I/home/jkumar/Softwares/petsc-3.8.4/arch-linux2-c-debug/include/ -L/home/jkumar/Softwares/petsc-3.8.4/lib/ -L/home/jkumar/Softwares/petsc-3.8.4/arch-linux2-c-debug/lib/ -lpetsc
+
+
+mpiexec -n 8 ./a.out
